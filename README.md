@@ -1,13 +1,16 @@
 # Building HIP-clang from public repositories
 
 `build_hip_clang.sh` clones a bunch of ROCm repositories needed for
-hip-clang into the current directory, and builds/installs them.
+hip-clang into the current directory, and builds/installs them, such
+that HIP code can either be built with hip-clang, or with hcc: both
+compilers can coexist happily together on the same system. 
 
 ## Prerequisites
 
 One of the components to be built, HIP, has a number of dependencies. See
-[https://github.com/ROCm-Developer-Tools/HIP/blob/master/install.sh]
-(the HIP build script), or simply do
+[the HIP build script]
+(https://github.com/ROCm-Developer-Tools/HIP/blob/master/install.sh), 
+or simply do
 ```
 sudo apt install dpkg-dev rpm doxygen libelf-dev rename
 ```
@@ -22,6 +25,22 @@ options:
 -i     Install all components. Requires sudo privileges, and
        assumes all components have been built.
 ```
+
+## Using hip-clang
+
+The script installs hip-clang under `/opt/rocm/hip-clang`. It is most easily
+used via `/opt/rocm/hip-clang/bin/hipcc`. To compile HIP code with hip-clang,
+it needs to be passed the `-x hip` argument. If hipcc doesn't do this
+automagically, you need to pass the argument to hipcc. To see what hipcc
+passes to hip-clang, invoke hipcc with `HIPCC_VERBOSE=1`.
+
+If you want to play with rocm-gdb, hip-clang is the right tool: rocm-gdb works
+way better on code compiled with hip-clang than on code compiled with hcc. 
+However, you need to compile with `-mcode-object-v3` for rocm-gdb to make
+sense of the ELF format.
+
+Any AMD GPU libraries used by code compiled with hip-clang need to be compiled
+with hip-clang too. Or else.
 
 ## Latest recorded successful build
 
