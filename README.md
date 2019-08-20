@@ -50,3 +50,19 @@ Git commit hashes of the various components in the latest successful build:
 * lld: e898dad309c45cfc64b93459f39a6e442ec20633
 * ROCm device library: ac6a51547af45d31d116502e835ad6c762d139d5
 * HIP: e919a8246e588ca75e6fc83b1e6bbf866eb94cdf
+
+## Bonus script: hc_extractkernel
+
+Binaries created with hip-clang have a different format than binaries created
+with hipcc, and consequently, `/opt/rocm/bin/extractkernel` does not work
+with hip-clang binaries. Included in this repo is `hc_extractkernel`, a
+modified version of `extractkernel` for hip-clang. Due to the different
+format of hip-clang generated executables, kernels are dumped into multiple
+files, with one kernel per `*.isa` file.
+
+Note: based on limited experimentation, I made the assumption that offload
+bundles in the binary are 16-byte aligned. That may be incorrect; the alignment
+could also be 8-byte or 32-byte, for instance. If `hc_extractkernel` fails to
+extract some kernels, it may be useful to experiment with the alignment; see
+the tail of the script. Please let me know if you find a different alignment
+than 16 bytes.
