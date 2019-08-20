@@ -130,21 +130,3 @@ if getopts "hbit" opt; then
 fi
 
 usage
-
-
-
-
-
-
-
-### Notes
-## HIP dependencies: see https://github.com/ROCm-Developer-Tools/HIP/blob/master/install.sh
-# sudo apt install dpkg-dev rpm doxygen libelf-dev rename
-## ROCm dependencies: todo
-#
-## Commits:
-# llvm: a152ce59
-# clang: ddeb7926
-# lld: 60990336
-# ROCm device library: 95e8c8da
-# HIP: 57397862
