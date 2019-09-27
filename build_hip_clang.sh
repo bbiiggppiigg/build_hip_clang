@@ -12,7 +12,7 @@ function build_components()
 {
 	# verify that ROCm is installed
 	echo $0: verifying ROCm installation...
-	rocm_version=`cat /opt/rocm/.info/version 2> /dev/null`
+	rocm_version=`cat /opt/rocm/.info/version-dev 2> /dev/null`
 	if [ $? -eq 0 ]; then
 		echo $0: ROCm ${rocm_version} is installed.
 	else
