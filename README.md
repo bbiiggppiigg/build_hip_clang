@@ -12,7 +12,7 @@ One of the components to be built, HIP, has a number of dependencies. See
 (https://github.com/ROCm-Developer-Tools/HIP/blob/master/install.sh), 
 or simply do
 ```
-sudo apt install dpkg-dev rpm doxygen libelf-dev rename
+sudo apt install dpkg-dev rpm doxygen libelf-dev rename cxlactivitylogger
 ```
 
 ## Build script usage
@@ -44,12 +44,21 @@ with hip-clang too. Or else.
 
 ## Latest recorded successful build
 
-Git commit hashes of the various components in the latest successful build:
-* llvm: 6a76b6e3451caf28415ba879aa9f2bd77ead843d
-* clang: e6a3c23fe3d9adff51a07e454941fa0cf641a19a
-* lld: e898dad309c45cfc64b93459f39a6e442ec20633
-* ROCm device library: ac6a51547af45d31d116502e835ad6c762d139d5
-* HIP: e919a8246e588ca75e6fc83b1e6bbf866eb94cdf
+Git commit hashes of the various components in the successful builds:
+
+|Component|Hash|Date|
+|---|---|---|---|---|
+|llvm|6a76b6e3451caf28415ba879aa9f2bd77ead843d|08/16/19|
+|llvm|3e096df53f89c48904719cd1c77d423a369b4a37|09/27/19|
+|clang|e6a3c23fe3d9adff51a07e454941fa0cf641a19a|08/15/19|
+|clang|885f657a0c89f50f66e77f8cf396c59b9bc47b99|09/27/19|
+|lld|e898dad309c45cfc64b93459f39a6e442ec20633|08/15/19|
+|lld|eb951b5f050d1f8a3b2f65430027f1392b2e1461|09/27/19|
+|ROCm device library|ac6a51547af45d31d116502e835ad6c762d139d5|08/13/19|
+|ROCm device library|c3967062378a1a33b66d8ff10455f4d72d567939|09/25/19|
+|HIP|e919a8246e588ca75e6fc83b1e6bbf866eb94cdf|08/15/19|
+|HIP|b187621b126c95f0c95efd651c057790fe3e28e4|09/27/19|
+
 
 ## Bonus script: hc_extractkernel
 
