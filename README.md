@@ -44,7 +44,9 @@ with hip-clang too. Or else.
 
 ## Latest recorded successful build
 
-Git commit hashes of the various components in the latest successful build:
+Git commit hashes of the various components in successfuls build:
+
+
 * llvm: 6a76b6e3451caf28415ba879aa9f2bd77ead843d
 * clang: e6a3c23fe3d9adff51a07e454941fa0cf641a19a
 * lld: e898dad309c45cfc64b93459f39a6e442ec20633
