@@ -12,7 +12,7 @@ One of the components to be built, HIP, has a number of dependencies. See
 (https://github.com/ROCm-Developer-Tools/HIP/blob/master/install.sh), 
 or simply do
 ```
-sudo apt install dpkg-dev rpm doxygen libelf-dev rename cxlactivitylogger
+sudo apt install git dpkg-dev rpm doxygen libelf-dev rename cxlactivitylogger comgr hcc cmake
 ```
 
 ## Build script usage
